@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  bup-schema:
+    image: bup-schema
+    container_name: bup-schema
+    env_file:
+      - local.env
+    environment:
+      - SPEED=1
+    ports:
+      - 8903:80
+    volumes:
+      - ../:/app
+    networks:
+      - ailegorretaNet
+
+networks:
+  ailegorretaNet:
+    external: true
